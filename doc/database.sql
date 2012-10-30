@@ -3,7 +3,8 @@
 
 DROP TABLE IF EXISTS prophet_node_info;
 CREATE TABLE prophet_node_info (
-  autokid int(10) unsigned not null auto_increment PRIMARY KEY,
+  nodeid int(10) unsigned not null auto_increment PRIMARY KEY,
+  parentid int(10) unsigned not null default 0,
   addtime int(10) unsigned not null default 0,
   modtime int(10) unsigned not null default 0,
   nodeidx1 int(10) unsigned not null default 0,
