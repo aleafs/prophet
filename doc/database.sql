@@ -18,9 +18,18 @@ CREATE TABLE prophet_node_info (
 -- SELECT ... FROM prophet_node_info WHERE nodeidx1 = ? AND nodeidx2 = ? AND nodepath = ?
 -- SELECT ... FORM prophet_node_info WHERE 
 
+DROP TABLE IF EXISTS prophet_app_config;
+CREATE TABLE prophet_app_config (
+  autokid int(10) unsigned not null auto_increment PRIMARY KEY,
+  appname varchar(32) not null default '',
+  UNIQUE KEY uk_app_name (appname)
+) ENGINE = InnoDB DEFAULT CHARSET=UTF8;
+
 DROP TABLE IF EXISTS prophet_node_access;
 CREATE TABLE prophet_node_access (
   autokid int(10) unsigned not null auto_increment PRIMARY KEY,
   node_id int(10) unsigned not null default 0,
+  appname varchar(32) not null default '',
+  aclvalue int(10) unsigned not null default 0,
 ) ENGINE = InnoDB DEFAULT CHARSET=UTF8;
 
