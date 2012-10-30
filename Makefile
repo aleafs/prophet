@@ -1,4 +1,4 @@
-TESTS = test/*.js
+TESTS = test/unit/*.js
 REPORTER = spec
 TIMEOUT = 5000
 JSCOVERAGE = ./node_modules/visionmedia-jscoverage/jscoverage
