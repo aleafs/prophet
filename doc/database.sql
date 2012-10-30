@@ -1,6 +1,7 @@
 
 -- 节点信息
 
+DROP TABLE IF EXISTS prophet_node_info;
 CREATE TABLE prophet_node_info (
   autokid int(10) unsigned not null auto_increment PRIMARY KEY,
   addtime int(10) unsigned not null default 0,
@@ -15,3 +16,10 @@ CREATE TABLE prophet_node_info (
 
 -- SELECT ... FROM prophet_node_info WHERE nodeidx1 = ? AND nodeidx2 = ? AND nodepath = ?
 -- SELECT ... FORM prophet_node_info WHERE 
+
+DROP TABLE IF EXISTS prophet_node_access;
+CREATE TABLE prophet_node_access (
+  autokid int(10) unsigned not null auto_increment PRIMARY KEY,
+  node_id int(10) unsigned not null default 0,
+) ENGINE = InnoDB DEFAULT CHARSET=UTF8;
+
